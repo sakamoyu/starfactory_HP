@@ -504,16 +504,15 @@
 
 
 		.contentbox h2 {
+      width:50%;
+      margin: 0 auto;
 			margin-top:30px;
 			margin-bottom:0;
 			font-size: 20px;
-      text-align:center;}
+      }
 
 		.contentbox p {
 				font-size: small;}
-
-
-
 
    	table{
 			border-collapse: collapse;
@@ -547,10 +546,12 @@
 				color: #FFFFFF;
 		}
 
-	}
+  	.message {
+			width:50%;
+      margin: 0 auto;
+  	}
 
- .message {
-  text-align:  center;}
+
 
     /* ++++++++++++++ fotter +++++++++++++ */
     .ground{
