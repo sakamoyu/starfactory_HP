@@ -604,7 +604,28 @@
     			}
     		}
 
+    /* 基礎情報  */
+    .icon_1
+    {float: left;
+    width: 50%}
+   .icon_2
+    {float: left;
+    width: 50%}
+    .icon_3
+    {float: left;
+    width: 50%}
+    .icon_4
+    {float: left;
+    width: 50%}
+    .icon_5
+    {float: left;
+    width: 50%}
+    .icon_6
+    {float: left;
+    width: 50%}
 
+    /* 選考ステップ  */
+    /* 募集職種*/
 
     /* ページ戻るボタン  */
     #returnTop{
