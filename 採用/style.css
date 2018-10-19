@@ -605,6 +605,7 @@
     		}
 
     /* 基礎情報  */
+    .制度name {font-weight: bold;}
     .icon_1
     {float: left;
     width: 50%}
@@ -623,8 +624,22 @@
     .icon_6
     {float: left;
     width: 50%}
+    .icon_7
+    {float: left;
+    width: 50%}
+    .icon_8
+    {float: left;
+    width: 50%}
+    .icon_9
+    {float: left;
+      width: 50%}
+      .icon_10
+      {float: left;
+        width: 50%}
 
     /* 選考ステップ  */
+
+
     /* 募集職種*/
 
     /* ページ戻るボタン  */
