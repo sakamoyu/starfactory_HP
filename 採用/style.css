@@ -1,656 +1,727 @@
-<!doctype html>
-<html>
-<head>
+<!doctype html><html><head>@charset "utf-8";
+/* CSS Document */
 
-  @charset "utf-8";
-  /* CSS Document */
-  /* CSSのリセット */
-  html, body, div, span, applet, object, iframe,
-  h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-  a, abbr, acronym, address, big, cite, code,
-  del, dfn, em, font, img, ins, kbd, q, s, samp,
-  small, strike, strong, sub, sup, tt, var,
-  b, u, i, center,
-  dl, dt, dd, ol, ul, li,
-  fieldset, form, label, legend,
-  table, caption, tbody, tfoot, thead, tr, th, td {
-  	margin: 0;
-  	padding: 0;
-  	border: 0;
-  	outline: 0;
-  	font-size: 100%;
-  	vertical-align: baseline;
-  	background: transparent;
-    }
+/* CSSのリセット */
 
-  section,article,aside,nav,header,footer,hgroup {
-  	display:block
-    }
-  li{
-  	list-style-type:none;
-  	  }
-  img{
-  	border-style:none;
-    }
-  a{
-  	text-decoration:none;
-  	  }
-  /* 共用部 */
-  section{
-  	width: 100%;
-  		}
-  body{
-  	font-family: "メイリオ", Meiryo,Arial,"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "ＭＳ Ｐゴシック", "MS PGothic",sans-serif;
-      width:100%;
-  		}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+section, article, aside, nav, header, footer, hgroup {
+	display: block
+}
+li {
+	list-style-type: none;
+}
+img {
+	border-style: none;
+}
+a {
+	text-decoration: none;
+}
+/* 共用部 */
 
-  /* +++ starBoard +++ */
-  #contentWrap{
-  	position: relative;
-  		}
-  .bgBoard{
-  	position: absolute;
-  	background-repeat: no-repeat;
-  		}
-  #starBoard1{
-  	background-position: top center;
-  	top: 100px; left: 0; right: 0; bottom: 0;
-  	background-image: url("base/img/star01.png");
-  		}
-  #starBoard2{
-  	background-position: top center;
-  	top: 100px; left: 0; right: 0; bottom: 0;
-  	background-image: url("base/img/star02.png");
-  		}
-  #starBoard3{
-  	background-position: top center;
-  	top: 100px; left: 0; right: 0; bottom: 0;
-  	background-image: url("base/img/star03.png");
-  		}
-  #starBoard4{
-  	background-position: top center;
-  	top: 100px; left: 0; right: 0; bottom: 0;
-  	background-image: url("base/img/star04.png");
-  		}
-  .cloud{
-  	position: absolute;
-  	z-index: -10;
-  	background-image: url("base/img/cloud.png");
-  	background-repeat: no-repeat;
-  		}
-  .bird{
-  	position: absolute;
-  	z-index: -9;
-  	background-image: url("base/img/bird.png");
-  	background-repeat: no-repeat;
-  		}
-  #cloud1{
-  	background-position: top right;
-  	top: 800px; left: 0; right: 100px; bottom: 0;
+section {
+	width: 100%;
+}
+body {
+	font-family: "メイリオ", Meiryo, Arial, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	width: 100%;
+}
+/* +++ starBoard +++ */
 
-  		}
-  #cloud2{
-  	background-position: top left;
-  	top: 1100px; left: -50px; right: 0; bottom: 0;
-  		}
-  #cloud3{
-  	background-position: top right;
-  	top: 1610px; left: 0; right: 100px; bottom: 0;
-  		}
-  #cloud4{
-  	background-position: top left;
-  	top: 2180px; left: -50px; right: 0; bottom: 0;
-  		}
-  #bird1{
-  	background-position: top right;
-  	top: 1880px; left: 0; right: 450px; bottom: 0;
-  		}
-  #bird2{
-  	background-position: top right;
-  	top: 1780px; left: 0; right: 350px; bottom: 0;
-  		}
-  #bird3{
-  	background-position: top right;
-  	top: 1860px; left: 0; right: 260px; bottom: 0;
-  		}
-  @media screen and (max-width: 1300px){
-  		#cloud2{
-  		background-position: top left;
-  		top: 1100px; left: -300px; right: 0; bottom: 0;
-  			}
-  		#cloud4{
-  		background-position: top left;
-  		top: 2080px; left: -300px; right: 0; bottom: 0;
-  			}
-  		}
-  @media screen and (max-width: 950px){
-  	#cloud1{
-  		background-position: top right;
-  		top: 600px; left: 0; right: 0; bottom: 0;
-  			}
-  	#cloud2{
-  		background-position: top left;
-  		top: 850px; left: -450px; right: 0; bottom: 0;
-  			}
-  	#cloud3{
-  		background-position: top right;
-  		top: 1160px; left: 0; right: 0; bottom: 0;
-  			}
-  	#cloud4{
-  		background-position: top left;
-  		top: 1660px; left: -450px; right: 0; bottom: 0;
-  			}
-  	#bird1{
-  		background-position: top right;
-  		top: 1380px; left: 0; right: 200px; bottom: 0;
-  			}
-  	#bird2{
-  		background-position: top right;
-  		top: 1280px; left: 0; right: 100px; bottom: 0;
-  			}
-  	#bird3{
-  		background-position: top right;
-  		top: 1360px; left: 0; right: 10px; bottom: 0;
-  			}
-  		}
-  @media screen and (max-width: 660px){
-  	#bird1{
-  		display:none;
-  			}
-  	#bird2{
-  		display:none;
-  			}
-  	#bird3{
-  		display:none;
-  			}
-  		}
-  /* +++++++++ header ++++++++++++ */
-  #contentTop{
-  	width: 100%;
-  	height: 100px;
-  	position: relative;
-  	color: #fff;
-  	z-index: 10;
-  		}
-  #contentTop h2{
-  	margin-top: 10px;
-  	font-size: 30px;
-  		}
-  #logo{
-  	float:left;
-  	margin-left: 5px;
-  		}
-  #toplogoImg{
-  	height: 32px;
-  	margin-top: 20px;
-  		}
-  #topWrap{
-  	margin: auto;
-  	width:80%;
-  		}
-  @media screen and (max-width: 950px){
-  	#toplogoImg{
-  		margin-top: 10px;
-  		height: 100%;
-  			}
-  	#topWrap{
-  		width:100%;
-  		}
-  			}
-  @media screen and (max-width: 321px){
-  	#toplogoImg {
-  		margin-top: 15px;
-  		height:47px;
-  			}
-  		}
-  /* +++++++++ navi ++++++++++++++ */
-  #topNavi{
-  	height: 100%;
-  	float: right;
-  		}
-  #topNavi ul{
-  	width: 100%;
-  	margin: 20px auto;
-  	display: flex;
-  	justify-content: flex-end;
-  		}
-  #topNavi ul li a{
-  	margin: 0px 0px;
-  	color: #000;
-  	display: block;
-  	padding: 7px 25px;
-  	text-align: center;
-  	text-decoration: none;
-  	font-size: 14px;
-  	font-family: ryo-gothic-plusn, sans-serif;
-  	font-style: normal;
-  	font-weight: 700;
-  		}
-  #topNavi ul li a:hover{
-  	color: #fff;
-  	background: #5eb7e8;
-  	border-radius:30px;
-  		}
-  #topNavi ul li a span{
-  	display: block;
-  	margin-top: -5px;
-  	font-size: 11px;
-  	letter-spacing: 1px;
-  	font-family: azo-sans-web, sans-serif;
-  	font-style: normal;
-  	font-weight: 700;
-  	color: #5eb7e8;
-  		}
-  #topNavi ul li a:hover span{
-  	color: #fff;
-  		}
-  @media screen and (max-width: 1080px){
-  	#topNavi ul li a{
-  		padding: 7px 16px;
-  	}
-  }
-  /* +++++++++ toggle button ++++++++++++++ */
-  #nav-toggle {
-  	display: none;
-  	position: absolute;
-  	right: 0;
-  	top: 0;
-  	width: 74px;
-  	height: 74px;
-  	cursor: pointer;
-  	background: #0062b1;
-  		}
-  #nav-toggle div {
-  	position: relative;
-  		}
-  #nav-toggle span {
-  	display: block;
-  	position: absolute;
-  	height: 5px;
-  	width: 32px;
-  	background: #fff;
-  	left: 22px;
-  	transition: .35s ease-in-out;
-  		}
-  #nav-toggle span:nth-child(1) {
-  	top: 26px;
-  		}
-  #nav-toggle span:nth-child(2) {
-  	top: 37px;
-  		}
-  #nav-toggle span:nth-child(3) {
-  	top: 48px;
-  		}
-  /* #nav-toggle 切り替えアニメーション */
-  .open #nav-toggle span:nth-child(1) {
-  	top: 34px;
-  	transform: rotate(315deg);
-  }
-  .open #nav-toggle span:nth-child(2) {
-  	width: 0;
-  	left: 50%;
-  }
-  .open #nav-toggle span:nth-child(3) {
-  	top: 34px;
-  	transform: rotate(-315deg);
-  		}
-  /* #topNavi スライドアニメーション */
-  .open #topNavi {
-  	transform: translateY(656px);
-  		}
-  @media screen and (max-width: 950px){
-  	#topNavi {
-  		position: absolute;
-  		top: -600px;
-  		width: 100%;
-  		text-align: center;
-  		padding: 10px 0;
-  		transition: .4s ease-in-out;
-  		float: none;
-  		z-index: 100;
-  			}
-  	#topNavi ul {
-  		position: static;
-  		right: 0;
-  		bottom: 0;
-  		width: 100%;
-  		display: block;
-  		margin: 0 auto;
-  		background: #0062b1;
-  			}
-  	#topNavi ul li{
-  		margin: auto;
-  		width: 60%;
-  		display: block;
-  		padding: 15px 0;
-  			}
-  	#topNavi ul li a{
-  		float: none;
-  		position: static;
-  		background: #0062b1;
-  			}
-  	#topNavi ul li{
-  		border-bottom: 2px #5eb7e8 solid;
-  			}
-  	#topNavi ul li:last-child{
-  		border-bottom: 2px none;
-  			}
-  	#topNavi ul li a:hover{
-  		border-radius: 0;
-  			}
-  	#topWrap #topNavi ul li a,
-  	#topWrap.fixed #topNavi ul li a {
-  		width: 200px;
-  		margin: auto;
-  		display: block;
-  		color: #fff;
-  		padding: 10px 0;
-  		border-radius: 5px;
-  			}
-  	#nav-toggle {
-  		display: block;
-  			}
-  	.changeColor{
-  		transition: .65s ease-in-out;
-  		background-color: #0062b1;
-  			}
-  		}
+#contentWrap {
+	position: relative;
+}
+.bgBoard {
+	position: absolute;
+	background-repeat: no-repeat;
+}
+#starBoard1 {
+	background-position: top center;
+	top: 100px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-image: url("base/img/star01.png");
+}
+#starBoard2 {
+	background-position: top center;
+	top: 100px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-image: url("base/img/star02.png");
+}
+#starBoard3 {
+	background-position: top center;
+	top: 100px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-image: url("base/img/star03.png");
+}
+#starBoard4 {
+	background-position: top center;
+	top: 100px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-image: url("base/img/star04.png");
+}
+.cloud {
+	position: absolute;
+	z-index: -10;
+	background-image: url("base/img/cloud.png");
+	background-repeat: no-repeat;
+}
+.bird {
+	position: absolute;
+	z-index: -9;
+	background-image: url("base/img/bird.png");
+	background-repeat: no-repeat;
+}
+#cloud1 {
+	background-position: top right;
+	top: 800px;
+	left: 0;
+	right: 100px;
+	bottom: 0;
+}
+#cloud2 {
+	background-position: top left;
+	top: 1100px;
+	left: -50px;
+	right: 0;
+	bottom: 0;
+}
+#cloud3 {
+	background-position: top right;
+	top: 1610px;
+	left: 0;
+	right: 100px;
+	bottom: 0;
+}
+#cloud4 {
+	background-position: top left;
+	top: 2180px;
+	left: -50px;
+	right: 0;
+	bottom: 0;
+}
+#bird1 {
+	background-position: top right;
+	top: 1880px;
+	left: 0;
+	right: 450px;
+	bottom: 0;
+}
+#bird2 {
+	background-position: top right;
+	top: 1780px;
+	left: 0;
+	right: 350px;
+	bottom: 0;
+}
+#bird3 {
+	background-position: top right;
+	top: 1860px;
+	left: 0;
+	right: 260px;
+	bottom: 0;
+}
+@media screen and (max-width: 1300px) {
+	#cloud2 {
+		background-position: top left;
+		top: 1100px;
+		left: -300px;
+		right: 0;
+		bottom: 0;
+	}
+	#cloud4 {
+		background-position: top left;
+		top: 2080px;
+		left: -300px;
+		right: 0;
+		bottom: 0;
+	}
+}
+@media screen and (max-width: 950px) {
+	#cloud1 {
+		background-position: top right;
+		top: 600px;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+	#cloud2 {
+		background-position: top left;
+		top: 850px;
+		left: -450px;
+		right: 0;
+		bottom: 0;
+	}
+	#cloud3 {
+		background-position: top right;
+		top: 1160px;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+	#cloud4 {
+		background-position: top left;
+		top: 1660px;
+		left: -450px;
+		right: 0;
+		bottom: 0;
+	}
+	#bird1 {
+		background-position: top right;
+		top: 1380px;
+		left: 0;
+		right: 200px;
+		bottom: 0;
+	}
+	#bird2 {
+		background-position: top right;
+		top: 1280px;
+		left: 0;
+		right: 100px;
+		bottom: 0;
+	}
+	#bird3 {
+		background-position: top right;
+		top: 1360px;
+		left: 0;
+		right: 10px;
+		bottom: 0;
+	}
+}
+@media screen and (max-width: 660px) {
+	#bird1 {
+		display: none;
+	}
+	#bird2 {
+		display: none;
+	}
+	#bird3 {
+		display: none;
+	}
+}
+/* +++++++++ header ++++++++++++ */
 
-  /* +++++++++ singboard +++++++++ */
-  #canvas-container{
-  	position: absolute;
-  	z-index: -50;
-    		}
-  #signboard{
-  	height: 700px;
-  	width: 100%;
-  	margin: auto 0;
-  	text-align: center;
-  		}
-  .onImg{
-  	background-image: url("base/img/wave.png");
-  	background-repeat: repeat-x;
-  	background-position: top;
-  }
-  #firstmessage{
-  	padding: 200px 0 50px;
-  	width: 100%;
-  	margin: auto;
-  	position: relative;
-  		}
-  #firstmessage p{
-  	letter-spacing: 40px;
-  	font-size: 36px;
-  	font-family: azo-sans-web, sans-serif;
-  	font-style: normal;
-  	font-weight: 700;
-  	color: #fff;
-  		}
-  #starShip{
-  	position: relative;
-  	padding-top: 54px;
-  	width: 50px;
-  	margin: auto;
-  		}
-  .starShip{
-  	position: absolute;
-  		}
-  #shipBody{
-  	left: 0;
-  	bottom: 0;
-  		}
-  #shipStar1{
-  	bottom: 70px;
-  	left: 21px;
-  		}
-  #shipStar2{
-  	bottom: 77px;
-  	left: 28px;
-  		}
-  #shipStar3{
-  	bottom: 82px;
-  	left: 12px;
-  		}
-  #oneWrap{
-  	position: relative;
-  	width: 300px;
-  	margin: auto;
-  		}
-  .onceStar{
-  	position: absolute;
-  	top: -5px;
-  	left: 290px;
-  		}
-  .onceStarTail{
-  	position: absolute;
-  	top: -140px;
-  	left: 305px;
-  		}
-  @media screen and (max-width: 950px){
-  	#signboard{
-  		height: 340px;
-  		background-size: auto 100%;
-  		}
-  	#firstmessage{
-  		padding: 70px 0 50px;
-  		width: 300px;
-  			}
-  	#firstmessage p{
-  		letter-spacing: 5px;
-  			}
-  	.onceStar{
-  		position: absolute;
-  		top: -5px;
-  		left: 205px;
-  			}
-  	.onceStarTail{
-  		position: absolute;
-  		top: -140px;
-  		left: 220px;
-  			}
-  		}
-  /* +++++++++ conteinar +++++++++ */
-  #container{
-  	position: relative;
-  	width: 100%;
-  		}
-  .contentBox h2{
-  	letter-spacing: 10px;
-  	font-size: 36px;
-  	margin: 15px 0;
-  	font-family: azo-sans-web, sans-serif;
-  	font-style: normal;
-  	font-weight: 700;
-  		}
-  .contentBox p{
-  	font-size: 14px;
-  	font-family: ryo-gothic-plusn, sans-serif;
-  	font-style: normal;
-  	margin: 2px;
-  		}
-  .contentBox{
-  	width: 800px;
-  	margin: 30px auto;
-  	text-align: left;
-  		}
-  @media screen and (max-width: 950px){
-  	.contentBox{
-  		width: 94%;
-  		margin: 30px 3% 30px;
-  			}
-  		}
-  .contentBox::after{
-  	content: "";
-  	display: block;
-  	clear: both;
-  		}
-  .snsLinkLogo{
-  	float: left;
-  	margin-right: 15px;
-  		}
+#contentTop {
+	width: 100%;
+	height: 100px;
+	position: relative;
+	color: #fff;
+	z-index: 10;
+}
+#contentTop h2 {
+	margin-top: 10px;
+	font-size: 30px;
+}
+#logo {
+	float: left;
+	margin-left: 5px;
+}
+#toplogoImg {
+	height: 32px;
+	margin-top: 20px;
+}
+#topWrap {
+	margin: auto;
+	width: 80%;
+}
+@media screen and (max-width: 950px) {
+	#toplogoImg {
+		margin-top: 10px;
+		height: 100%;
+	}
+	#topWrap {
+		width: 100%;
+	}
+}
+@media screen and (max-width: 321px) {
+	#toplogoImg {
+		margin-top: 15px;
+		height: 47px;
+	}
+}
+/* +++++++++ navi ++++++++++++++ */
 
+#topNavi {
+	height: 100%;
+	float: right;
+}
+#topNavi ul {
+	width: 100%;
+	margin: 20px auto;
+	display: flex;
+	justify-content: flex-end;
+}
+#topNavi ul li a {
+	margin: 0px 0px;
+	color: #000;
+	display: block;
+	padding: 7px 25px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 14px;
+	font-family: ryo-gothic-plusn, sans-serif;
+	font-style: normal;
+	font-weight: 700;
+}
+#topNavi ul li a:hover {
+	color: #fff;
+	background: #5eb7e8;
+	border-radius: 30px;
+}
+#topNavi ul li a span {
+	display: block;
+	margin-top: -5px;
+	font-size: 11px;
+	letter-spacing: 1px;
+	font-family: azo-sans-web, sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	color: #5eb7e8;
+}
+#topNavi ul li a:hover span {
+	color: #fff;
+}
+@media screen and (max-width: 1080px) {
+	#topNavi ul li a {
+		padding: 7px 16px;
+	}
+}
+/* +++++++++ toggle button ++++++++++++++ */
 
-		/* ++++++++++++++ 募集要項 +++++++++++++ */
-    @media screen and (max-width: 950px)
-     #contentbox {
-    	 padding: 10px 0 80px;
-     }
+#nav-toggle {
+	display: none;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 74px;
+	height: 74px;
+	cursor: pointer;
+	background: #0062b1;
+}
+#nav-toggle div {
+	position: relative;
+}
+#nav-toggle span {
+	display: block;
+	position: absolute;
+	height: 5px;
+	width: 32px;
+	background: #fff;
+	left: 22px;
+	transition: .35s ease-in-out;
+}
+#nav-toggle span:nth-child(1) {
+	top: 26px;
+}
+#nav-toggle span:nth-child(2) {
+	top: 37px;
+}
+#nav-toggle span:nth-child(3) {
+	top: 48px;
+}
+/* #nav-toggle 切り替えアニメーション */
 
-    .contentbox h1 {
-			margin-top:0;
-			margin-bottom:-10px;
-			font-size: 36px;
-      }
+.open #nav-toggle span:nth-child(1) {
+	top: 34px;
+	transform: rotate(315deg);
+}
+.open #nav-toggle span:nth-child(2) {
+	width: 0;
+	left: 50%;
+}
+.open #nav-toggle span:nth-child(3) {
+	top: 34px;
+	transform: rotate(-315deg);
+}
+/* #topNavi スライドアニメーション */
 
+.open #topNavi {
+	transform: translateY(656px);
+}
+@media screen and (max-width: 950px) {
+	#topNavi {
+		position: absolute;
+		top: -600px;
+		width: 100%;
+		text-align: center;
+		padding: 10px 0;
+		transition: .4s ease-in-out;
+		float: none;
+		z-index: 100;
+	}
+	#topNavi ul {
+		position: static;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		display: block;
+		margin: 0 auto;
+		background: #0062b1;
+	}
+	#topNavi ul li {
+		margin: auto;
+		width: 60%;
+		display: block;
+		padding: 15px 0;
+	}
+	#topNavi ul li a {
+		float: none;
+		position: static;
+		background: #0062b1;
+	}
+	#topNavi ul li {
+		border-bottom: 2px #5eb7e8 solid;
+	}
+	#topNavi ul li:last-child {
+		border-bottom: 2px none;
+	}
+	#topNavi ul li a:hover {
+		border-radius: 0;
+	}
+	#topWrap #topNavi ul li a, #topWrap.fixed #topNavi ul li a {
+		width: 200px;
+		margin: auto;
+		display: block;
+		color: #fff;
+		padding: 10px 0;
+		border-radius: 5px;
+	}
+	#nav-toggle {
+		display: block;
+	}
+	.changeColor {
+		transition: .65s ease-in-out;
+		background-color: #0062b1;
+	}
+}
+/* +++++++++ singboard +++++++++ */
 
-		.contentbox h2 {
-      width:50%;
-      margin: 0 auto;
-			margin-top:30px;
-			margin-bottom:0;
-			font-size: 20px;
-      }
+#canvas-container {
+	position: absolute;
+	z-index: -50;
+}
+#signboard {
+	height: 700px;
+	width: 100%;
+	margin: auto 0;
+	text-align: center;
+}
+.onImg {
+	background-image: url("base/img/wave.png");
+	background-repeat: repeat-x;
+	background-position: top;
+}
+#firstmessage {
+	padding: 200px 0 50px;
+	width: 100%;
+	margin: auto;
+	position: relative;
+}
+#firstmessage p {
+	letter-spacing: 40px;
+	font-size: 36px;
+	font-family: azo-sans-web, sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	color: #fff;
+}
+#starShip {
+	position: relative;
+	padding-top: 54px;
+	width: 50px;
+	margin: auto;
+}
+.starShip {
+	position: absolute;
+}
+#shipBody {
+	left: 0;
+	bottom: 0;
+}
+#shipStar1 {
+	bottom: 70px;
+	left: 21px;
+}
+#shipStar2 {
+	bottom: 77px;
+	left: 28px;
+}
+#shipStar3 {
+	bottom: 82px;
+	left: 12px;
+}
+#oneWrap {
+	position: relative;
+	width: 300px;
+	margin: auto;
+}
+.onceStar {
+	position: absolute;
+	top: -5px;
+	left: 290px;
+}
+.onceStarTail {
+	position: absolute;
+	top: -140px;
+	left: 305px;
+}
+@media screen and (max-width: 950px) {
+	#signboard {
+		height: 340px;
+		background-size: auto 100%;
+	}
+	#firstmessage {
+		padding: 70px 0 50px;
+		width: 300px;
+	}
+	#firstmessage p {
+		letter-spacing: 5px;
+	}
+	.onceStar {
+		position: absolute;
+		top: -5px;
+		left: 205px;
+	}
+	.onceStarTail {
+		position: absolute;
+		top: -140px;
+		left: 220px;
+	}
+}
+/* +++++++++ conteinar +++++++++ */
 
-		.contentbox p {
-				font-size: small;}
+#container {
+	position: relative;
+	width: 100%;
+}
+.contentBox h2 {
+	letter-spacing: 10px;
+	font-size: 36px;
+	margin: 15px 0;
+	font-family: azo-sans-web, sans-serif;
+	font-style: normal;
+	font-weight: 700;
+}
+.contentBox p {
+	font-size: 14px;
+	font-family: ryo-gothic-plusn, sans-serif;
+	font-style: normal;
+	margin: 2px;
+}
+.contentBox {
+	width: 800px;
+	margin: 30px auto;
+	text-align: left;
+}
+@media screen and (max-width: 950px) {
+	.contentBox {
+		width: 94%;
+		margin: 30px 3% 30px;
+	}
+}
+.contentBox::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+.snsLinkLogo {
+	float: left;
+	margin-right: 15px;
+}
+/* ++++++++++++++ 募集要項 +++++++++++++ */
 
-   	table{
-			border-collapse: collapse;
-			width:50%;
-      margin: 0 auto;
-       }
+@media screen and (max-width: 950px) #contentbox {
+	padding: 10px 0 80px;
+}
 
-		th.t_top {
-				border-top: #000000 4px solid;
-		}
-		th {
-			border-bottom: #e3e3e3 1px dotted;
-			text-align: left;
-			background: #e8e8e8;
-			padding: 10px;
-			font-weight: bold;
-			font-size: small;
-		}
-		td.t_top {
-			border-top: #b3b3b3 4px solid;
-		}
-		td {
-			border-bottom: #e3e3e3 1px dotted;
-			text-align: left;
-			background: #ffffff;
-			padding: 5px;
-			font-size: small;
-		}
-		tr:hover {
-				background: #3D80DF;
-				color: #FFFFFF;
-		}
+.contentbox h1 {
+	margin-top: 0;
+	margin-bottom: -10px;
+	font-size: 36px;
+}
+.contentbox h2 {
+	width: 50%;
+	margin: 0 auto;
+	margin-top: 30px;
+	margin-bottom: 0;
+	font-size: 20px;
+}
+.contentbox p {
+	font-size: small;
+}
+table {
+	border-collapse: collapse;
+	width: 50%;
+	margin: 0 auto;
+}
+th.t_top {
+	border-top: #000000 4px solid;
+}
+th {
+	border-bottom: #e3e3e3 1px dotted;
+	text-align: left;
+	background: #e8e8e8;
+	padding: 10px;
+	font-weight: bold;
+	font-size: small;
+}
+td.t_top {
+	border-top: #b3b3b3 4px solid;
+}
+td {
+	border-bottom: #e3e3e3 1px dotted;
+	text-align: left;
+	background: #ffffff;
+	padding: 5px;
+	font-size: small;
+}
+tr:hover {
+	background: #3D80DF;
+	color: #FFFFFF;
+}
+.link  {
+	width: 100%;
+	margin: 0 auto;
+}
+/* ++++++++++++++ entry +++++++++++++ */
 
-  	.message {
-			width:50%;
-      margin: 0 auto;
-  	}
+.m_ic_arrow1 {
+	position: relative;
+	display: inline-block;
+	padding: 0.25em 0.5em;
+	text-decoration: none;
+	color: #FFF;
+	background: #60b6e5;
+	/*背景色*/
+	border-bottom: solid 2px #0162b1;
+	/*少し濃い目の色に*/
+	border-radius: 4px;
+	/*角の丸み*/
+	box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+	font-weight: bold;
+	width: 8%;
+	text-align: center;
+}
+.m_ic_arrow1 {
+	border-bottom: solid 2px #0162b1;
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
+	width: 8%;
+	text-align: center;
+}
+/* ++++++++++++++ fotter +++++++++++++ */
 
-  /* ++++++++++++++ entry +++++++++++++ */
-    .m_ic_arrow1 {
-        position: relative;
-        display: inline-block;
-        padding: 0.25em 0.5em;
-        text-decoration: none;
-        color: #FFF;
-        background: #60b6e5;/*背景色*/
-        border-bottom: solid 2px #0162b1;/*少し濃い目の色に*/
-        border-radius: 4px;/*角の丸み*/
-        box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
-        font-weight: bold;
-        width:8%;
-        text-align: center;
+.ground {
+	width: 100%;
+	height: 404px;
+	background-image: url("base/img/sf-ground.png");
+	background-repeat: no-repeat;
+	background-position: top;
+}
+#copyright {
+	padding-top: 350px;
+	text-align: center;
+	font-size: 16px;
+	/*	font-family: ryo-gothic-plusn, sans-serif;  */
+	font-style: normal;
+	font-weight: 400;
+	color: rgb(94, 183, 232);
+}
+@media screen and (max-width: 950px) {
+	.ground {
+		height: 188px;
+		background-image: url("base/img/sf-ground_s.png");
+	}
+	#copyright {
+		padding-top: 140px;
+		font-size: 12px;
+	}
+}
+/* 基礎情報  */
+.t_title{
+  width: 100px;
+}
+.制度name {
+	font-weight: bold;
+}
+p img {
+  float: left; margin-right: 7px;
+ }
+.icon_1 {
+	float: left;
+	width: 50%
+}
+.icon_2 {
+	float: left;
+	width: 50%
+}
+.icon_3 {
+	float: left;
+	width: 50%
+}
+.icon_4 {
+	float: left;
+	width: 50%
+}
+.icon_5 {
+	float: left;
+	width: 50%
+}
+.icon_6 {
+	float: left;
+	width: 50%
+}
+.icon_7 {
+	float: left;
+	width: 50%
+}
+.icon_8 {
+	float: left;
+	width: 50%
+}
+.icon_9 {
+	float: left;
+	width: 50%
+}
+.icon_10 {
+	float: left;
+	width: 50%
+}
+.icon_11 {
+	float: left;
+	width: 50%
+}
+.icon_12 {
+	float: left;
+	width: 50%
+}
+/* 選考ステップ  */
 
-    }
+/* 募集職種*/
 
-    .m_ic_arrow1 {
-        border-bottom: solid 2px #0162b1;
-        box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
-        width:8%;
-        text-align: center;
-    }
+/* ページ戻るボタン  */
 
-
-    /* ++++++++++++++ fotter +++++++++++++ */
-    .ground{
-    	width: 100%;
-    	height: 404px;
-    	background-image: url("base/img/sf-ground.png");
-    	background-repeat: no-repeat;
-    	background-position: top;
-    		}
-    #copyright{
-    	padding-top: 350px;
-    	text-align: center;
-    	font-size: 16px;
-    /*	font-family: ryo-gothic-plusn, sans-serif;  */
-    	font-style: normal;
-    	font-weight: 400;
-    	color: rgb(94, 183, 232);
-    		}
-    @media screen and (max-width: 950px){
-    	.ground{
-    	height:188px;
-    	background-image: url("base/img/sf-ground_s.png");
-    			}
-    	#copyright{
-    		padding-top: 140px;
-    		font-size: 12px;
-    			}
-    		}
-
-    /* 基礎情報  */
-    .制度name {font-weight: bold;}
-    .icon_1
-    {float: left;
-    width: 50%}
-   .icon_2
-    {float: left;
-    width: 50%}
-    .icon_3
-    {float: left;
-    width: 50%}
-    .icon_4
-    {float: left;
-    width: 50%}
-    .icon_5
-    {float: left;
-    width: 50%}
-    .icon_6
-    {float: left;
-    width: 50%}
-    .icon_7
-    {float: left;
-    width: 50%}
-    .icon_8
-    {float: left;
-    width: 50%}
-    .icon_9
-    {float: left;
-      width: 50%}
-      .icon_10
-      {float: left;
-        width: 50%}
-
-    /* 選考ステップ  */
-
-
-    /* 募集職種*/
-
-    /* ページ戻るボタン  */
-    #returnTop{
-    	position: fixed;
-    	bottom: 20px;
-    	right: 20px;
-    		}
-    @media screen and (max-width: 950px){
-    	#returnTop img{
-    		position: absolute;
-    		bottom: -100px;
-    		}
-    		}
+#returnTop {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+}
+@media screen and (max-width: 950px) {
+	#returnTop img {
+		position: absolute;
+		bottom: -100px;
+	}
+}
